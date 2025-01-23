@@ -19,3 +19,9 @@
       login_password: ExpenseApp@1
       login_host: 44.206.230.225
           
+
+   - name: Install MySql Server
+     ansible.builtin.package:
+        name: PyMySQL
+        state: installed   
+        
