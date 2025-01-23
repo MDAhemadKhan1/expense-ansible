@@ -31,27 +31,27 @@
       dest: /tmp/backend.zip 
 
    - name: unzip the backend code
-    ansible.builtin.unarchive:
+     ansible.builtin.unarchive:
       src: /tmp/backend.zip
       dest: /app
       remote_src: yes   
 
    - name: Install dependencies
-    community.general.npm:
+     community.general.npm:
       path: /app
 
    - name: copy backend service
-    ansible.builtin.copy:
+     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service 
 
    - name: install python libs
-    ansible.builtin.pip:
+     ansible.builtin.pip:
       name: "{{ item }}"
       executable: pip3.9
-    loop:
-    - cryptography
-    - PyMySQL   
+     loop:
+     - cryptography
+     - PyMySQL   
 
   - name: import mysql data
     community.mysql.mysql_db:
