@@ -62,7 +62,7 @@
       login_host: 3.83.239.190
       target: /app/schema/backend.sql
 
-  - name: daemon reload and restart service
+   - name: daemon reload and restart service
     ansible.builtin.systemd_service:
       name: backend
       enabled: true
