@@ -34,8 +34,13 @@
    - name: unzip the frontend code
      ansible.builtin.unarchive:
       src: /tmp/frontend.zip
-      dest: /etc/nginx/default.d/expense.conf
+      dest: /usr/share/nginx/html
       remote_src: yes
+
+   - name: copy expense config
+    ansible.builtin.copy:
+      src: expense.conf
+      dest: /etc/nginx/default.d/expense.conf   
 
    - name: restart nginx
      ansible.builtin.service:
