@@ -29,7 +29,8 @@
    - name: Install PyMySql 
      ansible.builtin.pip:
         name: PyMySQL
-        state: present   
+        state: present  
+        executable: pip3.9 
 
    - name: set root password
      ansible.builtin.command: "mysql_secure_installation --set-root-pass ExpenseApp@1"
