@@ -30,22 +30,22 @@
       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
       dest: /tmp/backend.zip 
 
-  - name: unzip the backend code
+   - name: unzip the backend code
     ansible.builtin.unarchive:
       src: /tmp/backend.zip
       dest: /app
       remote_src: yes   
 
-  - name: Install dependencies
+   - name: Install dependencies
     community.general.npm:
       path: /app
 
-  - name: copy backend service
+   - name: copy backend service
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service 
 
-  - name: install python libs
+   - name: install python libs
     ansible.builtin.pip:
       name: "{{ item }}"
       executable: pip3.9
