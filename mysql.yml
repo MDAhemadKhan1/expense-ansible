@@ -26,8 +26,8 @@
       msg: "{{ mysql_info }}"   
           
 
-   - name: Install MySql Server
-     ansible.builtin.package:
+   - name: Install PyMySql 
+     ansible.builtin.pip:
         name: PyMySQL
         state: installed   
         
