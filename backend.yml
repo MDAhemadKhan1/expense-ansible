@@ -53,8 +53,8 @@
      - cryptography
      - PyMySQL   
 
-  - name: import mysql data
-    community.mysql.mysql_db:
+   - name: import mysql data
+     community.mysql.mysql_db:
       name: all
       state: import
       login_user: root
