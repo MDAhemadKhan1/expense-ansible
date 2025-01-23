@@ -26,11 +26,13 @@
       msg: "{{ mysql_info }}"   
           
 
-   - name: Install PyMySql 
+   - name: Install PyMySql and cryptography
      ansible.builtin.pip:
-        name: PyMySQL
-        state: present  
-        executable: pip3.9 
+        name: "{{item}}"
+        executable: pip3.9
+     loop:
+     - cryptography
+     - PyMySql   
 
    - name: set root password
      ansible.builtin.command: "mysql_secure_installation --set-root-pass ExpenseApp@1"
