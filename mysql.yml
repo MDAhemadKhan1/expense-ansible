@@ -15,7 +15,7 @@
 
    - name: connect to mysql
      community.mysql.mysql_info:
-     login_user: root
-     login_password: ExpenseApp@1
-     login_host: 44.206.230.225
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: 44.206.230.225
           
