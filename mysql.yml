@@ -18,6 +18,11 @@
       login_user: root
       login_password: ExpenseApp@1
       login_host: 44.206.230.225
+     register: mysql_info
+
+   - name: print
+     ansible.builtin.debug:
+      msg: "{{ mysql_info }}"   
           
 
    - name: Install MySql Server
